@@ -1,15 +1,15 @@
-class Solution:
-    def maxSubArray(self, nums: List[int]) -> int:
-        max_sum=nums[0]
+nums = [5,4,-1,7,8]
+max_sum=nums[0]
+curr_sum=0
+for num in nums:
+    if curr_sum<0:
         curr_sum=0
-        for i in range(len(nums)):
-            if curr_sum < 0:
-                curr_sum = 0
-            curr_sum += nums[i]
-            max_sum = max(max_sum,curr_sum)
-        return max_sum
+    curr_sum+=num
+    max_sum = max(curr_sum,max_sum)
+print(max_sum)
 
 # Kadane's algorithm
+# Output: 23
 # Time Complexity: O(n)
 # Space Complexity: O(1)
 
